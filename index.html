@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Une nuit à Paris</title>
+        <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Playfair+Display&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="index.css" type="text/css">
+        <audio controls autoplay loop><source src="./Nocturne_in_B_flat minor_Op_9_no_1.mp3" type="audio/mp3"></audio>
+    </head>
+    <body>
+
+        <section class="visible" id="section0">
+            <h1>Une nuit à Paris</h1>
+            <p>Una carta para quien camina en sueños<br><br>
+            Esta noche, París no está en Francia.<br>
+            Está en las palabras. En la escena quieta de una carta que se escribe mientras duermes.<br><br>
+            Adelante, la ciudad espera.
+            </p>
+            <img src="./assets/Eiffel.jpg" width="350dp"><br/> 
+            <button onclick="nextSection()">Entrar</button>
+        </section>
+
+
+        <section id="section1">
+            <p>En las colinas de Montmartre, donde los artistas se desvelan para capturar algo que no tiene forma,<br>
+            hay un lugar que aún no ha sido pintado:<br>
+            una habitación que piensa, una mirada que recuerda.<br><br>
+            Allí estás tú, entre los trazos, escribiendo con la voz baja de una idea que apenas llega.</p>
+            <img src="./assets/Montmartre.jpg" width="350dp"><br/> 
+            <button onclick="nextSection()">Seguir</button>
+        </section>
+
+        <section id="section2">
+            <p>A la orilla del Sena, el río se lleva palabras que nunca se dijeron.<br><br>
+            Algunas noches, bajo un puente cualquiera, me pareció oír tu nombre susurrado por el agua.<br>
+            O tal vez era el mío, en tu voz.<br><br>
+            El silencio también escribe.</p>
+            <img src="./assets/Sena.jpg" width="350dp"><br/>
+            <button onclick="nextSection()">Seguir</button>
+        </section>
+
+        <section id="section3">
+            <p>En un teatro vacío, las butacas esperan como páginas sin leer.<br><br>
+            El telón está cerrado, pero tú ya estás ahí.<br>
+            El escenario no necesita luces cuando alguien sabe habitar las palabras.<br><br>
+            Como en los poemas, lo verdadero no ocurre en voz alta.</p>
+            <img src="./assets/Opera.jpg" width="350dp"><br/>
+            <button onclick="nextSection()">Seguir</button>
+        </section>
+
+        <section id="section4">
+            <p>En un rincón de la ciudad, hay un café que sólo abre en los sueños.<br><br>
+            Allí no se sirve café, sino memorias.<br><br>
+            Hoy, en una mesa junto a la ventana, alguien dejó un cuaderno con tu nombre.<br>
+            Lo abres. Y cada página es una forma de decir “gracias por existir”, sin escribirlo jamás.</p>
+            <img src="./assets/Cafe.jpg" width="350dp"><br/>
+            <button onclick="nextSection()">Seguir</button>
+        </section>
+
+        <section id="section4">
+            <div id="papyro">
+                <em class="cita">“Hablo con la voz que está detrás de la voz.”</em>
+                <p class="firma">- Alejandra Pizarnik</p>
+            <br/>
+            </div>
+            
+            <p>Podría haber elegido escribirte un poema, o una carta, o enviarte algo con forma.<br><br>
+            Pero elegí esta ciudad. Esta noche. Este viaje que no es real, pero tampoco mentira.<br><br>
+            Porque si París está hecha de sueños, hoy tú eres uno de ellos.<br><br>
+            Feliz cumpleaños.</p>
+            <p class="firma">- Desde la otra orilla del sueño</p>
+            <img src="./assets/Paris.jpg" width="350dp"><br/>
+        </section>
+
+        <script>
+            let current = 0;
+            const sections = document.querySelectorAll('section');
+        
+            function nextSection() {
+              if (current < sections.length - 1) {
+                sections[current].classList.remove('visible');
+                current++;
+                sections[current].classList.add('visible');
+                sections[current].scrollIntoView({ behavior: 'smooth', block: 'start' });
+              }
+            }
+          </script>
+    </body>
+</html>
